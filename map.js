@@ -12,10 +12,12 @@ const john = {
     roll: "frontend",
     alive: true
 }
+john.gender = "male";
 console.log(john);
 console.log(john.age);
 
-// map - ES6 spec
+
+// map
 const asher = new Map;
 
 asher.set("name", "Asher");
