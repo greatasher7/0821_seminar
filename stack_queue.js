@@ -25,6 +25,15 @@ Stack.prototype.pop = function() {
     }
 }
 
+const stack_sample = new Stack(5);
+stack_sample.push("1");
+stack_sample.push("2");
+stack_sample.push("3");
+console.log("after push on stack", stack_sample.storage);
+stack_sample.pop()
+console.log("after pop on stack", stack_sample.storage);
+
+
 // queue
 const Queue = function(capa) {
     this.capacity = capa || Infinity;
@@ -55,48 +64,16 @@ Queue.prototype.dequeue = function() {
     }
 }
 
-// test
-const stack_sample = new Stack(5);
 const queue_sample = new Queue(5);
+queue_sample.enqueue(1);
+queue_sample.enqueue(2);
+queue_sample.enqueue(3);
+console.log("after enqueue on queue", queue_sample.storage);
+queue_sample.dequeue()
+console.log("after dequeue on queue", queue_sample.storage);
 
-const s_or_q = prompt("stack or queue?");
-// stack test
-if(s_or_q === "stack"){
-    while(1){
-        const s_action = prompt("push(u) or pop(o) or exit");
-        if(s_action === "u"){
-            const s_data = prompt("write data");
-            stack_sample.push(s_data);
-            console.log("the storage is... ", stack_sample.storage);
-        } else if(s_action === "o"){
-            stack_sample.pop();
-            console.log("the storage is... ", stack_sample.storage);
-        } else if(s_action === "exit"){
-            console.log("exit!!");
-            break;
-        } else{
-            continue;
-        }
-    }
-// queue test
-} else if(s_or_q === "queue"){
-    while(1){
-        const q_action = prompt("enpueue(e) or dequeue(d) or exit");
-        if(q_action === "e"){
-            const q_data = prompt("write data");
-            queue_sample.enqueue(q_data);
-            console.log("the storage is... ", queue_sample.storage);
-        } else if(q_action === "d"){
-            queue_sample.dequeue();
-            console.log("the storage is... ", queue_sample.storage);
-        } else if(q_action === "exit"){
-            console.log("exit!!");
-            break;
-        } else{
-            continue;
-        }
-    }
-}
+
+
 
 
 

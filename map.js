@@ -27,13 +27,3 @@ asher.set("alive", true);
 
 console.log(asher);
 console.log(asher.get("age"));
-
-// set
-const names = new Set([1,2,3,4,5,5]);
-
-names.add(5);
-
-console.log(names);
-
-// obfect 대비 map 장점
-// key에 다양한 데이터타입 / 크기를 쉽게 얻음 / 
