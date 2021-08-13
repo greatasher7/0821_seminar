@@ -1,4 +1,4 @@
-// stack - string
+// stack - generics
 var Stack_ts = /** @class */ (function () {
     function Stack_ts(capa) {
         var _this = this;
@@ -28,7 +28,7 @@ var Stack_ts = /** @class */ (function () {
 }());
 var stack_sample_ts = new Stack_ts(5);
 stack_sample_ts.push("1");
-stack_sample_ts.push("2");
+stack_sample_ts.push(2);
 stack_sample_ts.push("3");
 console.log("after push on stack", stack_sample_ts.storage);
 stack_sample_ts.pop();

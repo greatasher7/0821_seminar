@@ -1,4 +1,4 @@
-// stack - string
+// stack - generics
 class Stack_ts {
     capacity: number;
     storage: any[];
@@ -10,7 +10,7 @@ class Stack_ts {
         this.count = 0;
     }
 
-    push = (data: string): void | boolean=> {
+    push = <T>(data: T) => {
         if(this.count >= this.capacity){
             console.log("the storage is full");
             return false;
@@ -32,15 +32,15 @@ class Stack_ts {
 }
 
 const stack_sample_ts = new Stack_ts(5);
-stack_sample_ts.push("1");
-stack_sample_ts.push("2");
-stack_sample_ts.push("3");
+stack_sample_ts.push<string>("1");
+stack_sample_ts.push<number>(2);
+stack_sample_ts.push<string>("3");
 console.log("after push on stack", stack_sample_ts.storage);
 stack_sample_ts.pop()
 console.log("after pop on stack", stack_sample_ts.storage);
 
 
-// queue - number
+// queue - interface
 interface login {
     name: string,
     password: number
@@ -66,7 +66,7 @@ class Queue_ts {
         this.count++;
     }
 
-    dequeue = (): login | boolean =>{
+    dequeue = (): login | boolean => {
         if(this.count === 0) {
             console.log("the storage is empty");
             return false;
