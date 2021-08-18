@@ -1,0 +1,24 @@
+{
+  "name": "210821_seminar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "tsc src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greatasher7/stack_queue.git"
+  },
+  "author": "asher",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/greatasher7/stack_queue/issues"
+  },
+  "homepage": "https://github.com/greatasher7/stack_queue#readme",
+  "devDependencies": {
+    "ts-node": "^10.2.0",
+    "typescript": "^4.3.5"
+  }
+}
