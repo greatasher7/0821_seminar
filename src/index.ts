@@ -1,8 +1,8 @@
-import StackQueue from './stack-queue-ts/stack_queue';
-import Singleton from './design-pattern-ts/singleton';
-import Observer from './design-pattern-ts/observer';
+import StackQueue from './stack-queue/stack_queue';
+import Singleton from './design-pattern/singleton';
+import Observer from './design-pattern/observer';
 
 StackQueue();
-// Singleton();
-// Observer();
+Singleton();
+Observer();
 
