@@ -32,12 +32,15 @@ const Observer = () => {
     
     // 옵저버 생성
     const observer1 = {
+        name: "observer1",
         notify: (data: any) => {console.log(`first ${data}`)}
     }
     const observer2 = {
+        name: "observer2",
         notify: (data: any) => {console.log(`second ${data}`)}
     }
     const observer3 = {
+        name: "observer3",
         notify: (data: any) => {console.log(`third ${data}`)}
     }
     
@@ -45,11 +48,14 @@ const Observer = () => {
     subject.register(observer1);
     subject.register(observer2);
     subject.register(observer3);
+
+    // 인스턴스의 옵저버 목록 확인
+    console.log('observer list is...', subject.observers);
     
     // 인스턴스 옵저버 목록에서 옵저버 제거
     subject.unregister(observer2);
     
-    // 인스턴스의 옵저버 목록 확인
+    // 인스턴스의 옵저버 목록 확인(제거 후)
     console.log('observer list is...', subject.observers);
     
     // 인스턴스에게 데이터 전달 후, 그 사실이 옵저버에게 전달이 되었는지 확인.

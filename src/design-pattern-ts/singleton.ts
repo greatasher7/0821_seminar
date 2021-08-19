@@ -1,15 +1,20 @@
 const singleton = () => {
-    
+    // 생성될 인스턴스의 원형이 될 Class
+    class PrivateSingleton {
+        message: string
+        constructor() {
+            this.message = "i am a instance";
+        }
+    }
+
     class Singleton {
         // 생성될 인스턴스를 넣을 전역 변수 선언
         private static newInstance: object = null;
         
-        private Singleton(){}
-    
         // 인스턴스 전역 변수가 비어 있으면 인스턴스 생성하고, 해당 인스턴스를 리턴
         public static getInstance(): object {
             if(Singleton.newInstance === null){
-                Singleton.newInstance = new Singleton
+                Singleton.newInstance = new PrivateSingleton
             }
             return Singleton.newInstance
         }
@@ -18,7 +23,7 @@ const singleton = () => {
     // 복수의 인스턴스 생성 메서드를 실행해도, 인스턴스는 하나만 생성
     const sample1: object = Singleton.getInstance();
     const sample2: object = Singleton.getInstance();
-    console.log("/////////// single-thread ///////////////")
+    console.log("/////////// singleton ///////////////")
     console.log(sample1);
     console.log(sample2);
     console.log(sample1===sample2 ? 'yes' : 'no');
@@ -26,12 +31,18 @@ const singleton = () => {
     
     
     // 멀티스레드 환경에서의 Singleton (기존 방법에서는 동시에 다수의 인스턴스가 생성될 수도 있다)
+    // 생성될 인스턴스의 원형이 될 Class
+    class PrivateSingleton_multiThread {
+        message: string
+        constructor() {
+            this.message = "i am a instance";
+        }
+    }
+
     class Singleton_multiThread {
         // class 생성과 동시에, 인스턴스를 생성하여 정적 변수에 초기화
-        private static newInstance = new Singleton_multiThread; 
+        private static newInstance = new PrivateSingleton_multiThread; 
     
-        private Singleton_multiThread(){}
-        
         // 생성된 인스턴스를 리턴
         public static getInstance(): object {
             return Singleton_multiThread.newInstance;

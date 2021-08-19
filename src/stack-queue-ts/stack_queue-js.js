@@ -3,16 +3,6 @@ const Stack = function(capa) {
     this.capacity = capa || Infinity;
     this.storage = [];
     this.count = 0;
-
-    // this.push = (data) => {
-    //     if(this.count < this.capacity){
-    //         this.storage[this.count] = data;
-    //         this.count++;
-    //     } else{
-    //         console.log("the storage is full");
-    //     }
-    // }
-
 }
 
 Stack.prototype.push = function(data) {
