@@ -18,7 +18,7 @@ const map_js = () => {
     console.log(john.age);
     
     
-    // map
+    // map - ts 확인해보기
     const asher = new Map;
     
     asher.set("name", "Asher");

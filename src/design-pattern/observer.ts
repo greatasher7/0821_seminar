@@ -1,7 +1,12 @@
 
 const Observer = () => {
 
-    // 클래스 생성
+    interface Person {
+        name: string,
+        notify(data: string): void 
+    }
+
+    // 클래스 생성 (리스너)
     class Subject {
         // 등록된 옵저버들을 담을 변수의 타입 지정
         observers: any[];
@@ -11,18 +16,18 @@ const Observer = () => {
             this.observers = [];
         }
     
-        // 옵저버를 등록한다 (배열에 담는다) 
-        register(observer: object){
+        // 옵저버를 등록한다 (배열에 담는다) // interface observer 
+        register(observer: Person){
             this.observers.push(observer);
         }
     
         // 배열에서 옵저버를 삭제한다
-        unregister(observer: object){
+        unregister(observer: Person){
             this.observers = this.observers.filter(registedObserver => registedObserver !== observer);
         }
     
         // 데이터를 받으면 등록된 옵저버들에게 이를 알리고 데이터를 전송한다.
-        notice(data: any){
+        notice(data: string){
             this.observers.forEach(observer => observer.notify(data));
         }
     }
@@ -33,15 +38,15 @@ const Observer = () => {
     // 옵저버 생성
     const observer1 = {
         name: "observer1",
-        notify: (data: any) => {console.log(`first ${data}`)}
+        notify: (data: string) => {console.log(`first ${data}`)}
     }
     const observer2 = {
         name: "observer2",
-        notify: (data: any) => {console.log(`second ${data}`)}
+        notify: (data: string) => {console.log(`second ${data}`)}
     }
     const observer3 = {
         name: "observer3",
-        notify: (data: any) => {console.log(`third ${data}`)}
+        notify: (data: string) => {console.log(`third ${data}`)}
     }
     
     // 인스턴스 옵저버 목록에 생성된 옵저버 추가

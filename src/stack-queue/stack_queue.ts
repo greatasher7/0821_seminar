@@ -1,6 +1,6 @@
 const stackQueue = () => {
     
-    // stack - generics
+    // stack - generics  컴파일 시점에서 타입이 정해짐 (어느 타입이 들어와야 하는지 정해주세요.)
     class Stack_ts {
         capacity: number;
         storage: any[];

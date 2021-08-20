@@ -8,13 +8,18 @@ const singleton = () => {
     }
 
     class Singleton {
+
+        message: string
+        private constructor() {
+            this.message = "i am a instance";
+        }
         // 생성될 인스턴스를 넣을 전역 변수 선언
         private static newInstance: object = null;
         
-        // 인스턴스 전역 변수가 비어 있으면 인스턴스 생성하고, 해당 인스턴스를 리턴
+        // 인스턴스 전역 변수가 비어 있으면 인스턴스 생성하고, 해당 인스턴스를 리턴 ===의 의미 in js
         public static getInstance(): object {
             if(Singleton.newInstance === null){
-                Singleton.newInstance = new PrivateSingleton
+                Singleton.newInstance = new Singleton
             }
             return Singleton.newInstance
         }
@@ -26,8 +31,8 @@ const singleton = () => {
     console.log("/////////// singleton ///////////////")
     console.log(sample1);
     console.log(sample2);
-    console.log(sample1===sample2 ? 'yes' : 'no');
-    
+    console.log(sample1 === sample2 ? 'yes' : 'no');
+    console.dir(sample1);
     
     
     // 멀티스레드 환경에서의 Singleton (기존 방법에서는 동시에 다수의 인스턴스가 생성될 수도 있다)
